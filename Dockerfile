@@ -77,6 +77,9 @@ RUN npm install
 # 9️⃣ Build Tailwind & Vite
 RUN npm run build 
 
+# Ensure Public Directory Exists
+RUN mkdir -p /var/www/public/build && chmod -R 777 /var/www/public/build
+
 # 🔟 Set Correct Permissions
 RUN chmod -R 777 storage bootstrap/cache
 
