@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: laravel-app
+    env: docker
+    plan: free
+    repo: https://github.com/Ajaz1717/youtube-backend  # Apna GitHub repo link daalo
+    branch: main
+    region: oregon
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: ballast.proxy.rlwy.net
+      - key: DB_PORT
+        value: "37383"
+      - key: DB_DATABASE
+        value: railway
+      - key: DB_USERNAME
+        value: root
+      - key: DB_PASSWORD
+        value: lylKAdegSHjitTZKZGDtlZTTRiiCDQuB
+    autoDeploy: true
