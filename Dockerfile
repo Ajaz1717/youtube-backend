@@ -28,6 +28,13 @@ RUN composer install --no-dev --optimize-autoloader
 # Set Permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
+# Ensure Node.js installed
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+  RUN apt-get install -y nodejs
+  
+  # Install frontend dependencies & build assets
+  RUN npm install && npm run build
+
 # Expose Port 10000
 EXPOSE 10000
 
