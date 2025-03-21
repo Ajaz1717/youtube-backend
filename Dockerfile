@@ -71,14 +71,17 @@ RUN composer install --no-dev --optimize-autoloader
 # 7️⃣ Ensure Node.js Installed
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs
 
-# 8️⃣ Install Frontend Dependencies & Build Vite (Tailwind CSS)
-RUN npm install && npm run build
+# 8️⃣ Install Frontend Dependencies
+RUN npm install 
 
-# 9️⃣ Set Correct Permissions
+# 9️⃣ Build Tailwind & Vite
+RUN npm run build 
+
+# 🔟 Set Correct Permissions
 RUN chmod -R 777 storage bootstrap/cache
 
-# 🔟 Expose Port 10000
+# 1️⃣1️⃣ Expose Port 10000
 EXPOSE 10000
 
-# 1️⃣1️⃣ Start Laravel Server
-CMD ["php", "-S", "0.0.0.0:10000", "-t", "public"]
+# 1️⃣2️⃣ Start Laravel Server & Vite (Fix for CSS)
+CMD ["sh", "-c", "npm run build && php -S 0.0.0.0:10000 -t public"]
