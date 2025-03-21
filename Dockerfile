@@ -28,8 +28,8 @@ RUN composer install --no-dev --optimize-autoloader
 # Set Permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Expose Port 9000
-EXPOSE 80
+# Expose Port 10000
+EXPOSE 10000
 
 # Start PHP-FPM
-CMD ["php", "-S", "0.0.0.0:80", "-t", "public"]
+CMD ["php", "-S", "0.0.0.0:10000", "-t", "public"]
