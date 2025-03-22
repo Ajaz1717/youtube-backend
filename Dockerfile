@@ -71,6 +71,11 @@ RUN composer install --no-dev --optimize-autoloader
 # 7️⃣ Ensure Node.js Installed
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs
 
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+php artisan route:clear
+
 # 8️⃣ Install Frontend Dependencies
 RUN npm install 
 

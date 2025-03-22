@@ -6,7 +6,7 @@
     <title>Admin Panel</title>
     <!-- @vite('resources/css/app.css') -->
     <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
-    @vite([secure_asset('build/assets/app-C_KKBAEc.css'), secure_asset('build/assets/app-CqflisoM.js')])
+    @vite([secure_asset('build/assets/app-OLPgMjua.css'), secure_asset('build/assets/app-CqflisoM.js')])
 </head>
 <body class="bg-gray-100">
     <div class="flex">
