@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <!-- @vite('resources/css/app.css') -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
+    @vite([secure_asset('build/assets/app-C_KKBAEc.css'), secure_asset('build/assets/app-CqflisoM.js')])
 </head>
 <body class="bg-gray-100">
     <div class="flex">
