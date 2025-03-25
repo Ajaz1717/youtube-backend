@@ -14,6 +14,6 @@ class Kernel extends HttpKernel
 
     protected $middlewareAliases = [
         'api.token' => \App\Http\Middleware\ApiTokenMiddleware::class,
-        'trust.proxies' => \App\Http\Middleware\TrustProxies::class
+        // 'trust.proxies' => \App\Http\Middleware\TrustProxies::class
     ];
 }
