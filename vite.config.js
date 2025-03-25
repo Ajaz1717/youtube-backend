@@ -3,7 +3,7 @@ import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     server: {
-        https: true, // Ensure HTTPS
+        origin: 'https://youtube-backend-qoi9.onrender.com', // Force HTTPS
     },
     plugins: [
         laravel({
