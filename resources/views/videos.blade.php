@@ -25,14 +25,14 @@
         <!-- Video List -->
         <div class="mt-6">
             <div class="flex justify-between items-center px-4">
-                <h3 class="text-xl font-semibold mb-3">Uploaded Videos</h3>
+                <h3 class="text-xl font-semibold mb-3 dark:text-white">Uploaded Videos</h3>
                 <x-secondary-button @click="showForm = !showForm" class="ms-3">
                     {{ __('Add New') }}
                 </x-secondary-button>
             </div>
             <table class="w-full bg-white shadow-md rounded">
                 <thead>
-                    <tr class="bg-gray-200 text-xs md:text-lg">
+                    <tr class="bg-gray-200 text-xs md:text-lg dark:text-white">
                         <th class="p-2 text-left">ID</th>
                         <th class="p-2 text-left">Name</th>
                         <th class="p-2 text-left hidden">URL</th>
