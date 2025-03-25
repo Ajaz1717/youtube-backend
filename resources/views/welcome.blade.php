@@ -15,7 +15,7 @@
 </head>
 <body class="bg-gray-100 h-screen flex justify-center items-center">
 
-    <div class="w-full max-w-md p-10 md:p-6 bg-transparent md:bg-white rounded-lg md:shadow-lg">
+    <!-- <div class="w-full max-w-md p-10 md:p-6 bg-transparent md:bg-white rounded-lg md:shadow-lg">
         <h2 class="text-2xl font-semibold text-center mb-1 text-gray-800">Admin Panel</h2>
         <h2 class="text-2xl font-semibold text-center mb-6 text-gray-800">Login</h2>
 
@@ -50,7 +50,7 @@
             </div>
 
         </form>
-    </div>
+    </div> -->
 
 </body>
 
