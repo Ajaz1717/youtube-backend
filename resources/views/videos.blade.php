@@ -18,7 +18,7 @@
                 <input type="text" name="author" class="w-full p-2 border rounded placeholder:text-xs" placeholder="Enter Author Name">
                 <span class="text-red-800 text-[9px] md:text-xs relative bottom-1.5">@error('author'){{$message}}@enderror</span>
                 <button @click="showForm = !showForm" type="submit" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">ADD VIDEO</button>
-                <button @click="showForm = !showForm" type="submit" class="mt-2 px-4 py-2 bg-red-600 text-white rounded">CANCEL</button>
+                <button @click="showForm = !showForm" class="mt-2 px-4 py-2 bg-red-600 text-white rounded">CANCEL</button>
             </form>
         </div>
 
@@ -40,7 +40,7 @@
                         <th class="p-2">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white dark:bg-gray-800 dark:text-white text-black">
                     @foreach ($videos as $video)
                     <tr class="border-b text-xs md:text-lg">
                         <td class="p-2">{{ $video->id }}</td>
@@ -48,8 +48,12 @@
                         <td class="p-2 hidden">{{ $video->url }}</td>
                         <td class="p-2 hidden md:block">{{ $video->author }}</td>
                         <td class="p-2 text-center">
-                            <a href="#" class="text-blue-500">Edit</a> |
-                            <a href="#" class="text-red-500">Delete</a>
+                        <a href="{{ route('videos.edit', $video->id) }}" class="text-blue-500">Edit</a> |
+                            <form action="{{ route('videos.delete', $video->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500" onclick="return confirm('Are you sure you want to delete this video?');">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

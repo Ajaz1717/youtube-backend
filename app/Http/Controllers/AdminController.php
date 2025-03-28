@@ -41,6 +41,53 @@ class AdminController extends Controller
         return redirect()->route('videos')->with('success', 'Video added successfully!');
     }
 
+    public function deleteVideo($id)
+    {
+        $video = Video::find($id);
+
+        if (!$video) {
+            return redirect()->route('videos')->with('error', 'Video not found.');
+        }
+
+        $video->delete();
+
+        return redirect()->route('videos')->with('success', 'Video deleted successfully.');
+    }
+
+    public function editVideo($id)
+    {
+        $video = Video::find($id);
+
+        if (!$video) {
+            return redirect()->route('videos')->with('error', 'Video not found.');
+        }
+
+        return view('edit_video', compact('video'));
+    }
+
+    public function updateVideo(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'video_url' => 'required|url',
+            'author' => 'required|string|max:255',
+        ]);
+
+        $video = Video::find($id);
+
+        if (!$video) {
+            return redirect()->route('videos')->with('error', 'Video not found.');
+        }
+
+        $video->update([
+            'name' => $request->name,
+            'url' => $request->video_url,
+            'author' => $request->author,
+        ]);
+
+        return redirect()->route('videos')->with('success', 'Video updated successfully.');
+    }
+
     // public function login(Request $request)
     // {
     //     $request->validate([
