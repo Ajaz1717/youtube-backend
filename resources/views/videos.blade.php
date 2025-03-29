@@ -32,7 +32,7 @@
             </div>
             <table class="w-full bg-white shadow-md rounded">
                 <thead>
-                    <tr class="bg-gray-200 text-xs md:text-lg dark:text-white">
+                    <tr class="bg-gray-200 text-xs dark:bg-gray-900 md:text-lg dark:text-white">
                         <th class="p-2 text-left">ID</th>
                         <th class="p-2 text-left">Name</th>
                         <th class="p-2 text-left hidden">URL</th>

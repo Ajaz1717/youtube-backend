@@ -5,9 +5,9 @@
     </h2>
   </x-slot>
 
-  <body class="flex items-center justify-center h-screen bg-gray-100">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-      <form action="{{ route('videos.update', $video->id) }}" method="POST">
+  <body class="flex items-center justify-center h-screen bg-gray-100 dark:bg-gray-800 dark:text-white w-full">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full">
+      <form action="{{ route('videos.update', $video->id) }}" method="POST" class="w-full">
         @csrf
         @method('PUT')
 
